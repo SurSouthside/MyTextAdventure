@@ -1,0 +1,39 @@
+.prgmTextArea{
+    background: #101010;
+	height: 500px;
+	overflow: scroll;
+	width: 600px;
+	color: #FFFFFF;
+} 
+
+.prgmINPUTAREA{
+    background: #222222;
+	height: 50px;
+	overflow: scroll;
+	width: 300px;
+	color: #61B239;
+} 
+
+.statsLabel{
+	
+}
+
+.inventoryLabel{
+	
+}
+
+#mainTable{
+	visibility:hidden;
+	margin-left: 100px;
+}
+
+#statsTable{
+   visibility:hidden;
+   margin-right:50px;
+
+}
+
+#inventoryTable{
+   visibility: hidden;
+
+}

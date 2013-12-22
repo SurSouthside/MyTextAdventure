@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+  <meta name="author"  content="Stuart South"/>
+  <link rel="stylesheet" href="tacss.css" type="text/css" media="screen" />
+  <title>My Adventure Game</title>
+   
+   <script type="text/javascript" src="jquery-1.10.0.min.js"></script>	
+   
+   <script type="text/javascript" src="globals.js"></script>	
+   
+   <script type="text/javascript" src="engine/game.js"></script>	
+   <script type="text/javascript" src="engine/initialization.js"></script>	
+   <script type="text/javascript" src="engine/parser.js"></script>	
+   
+   <script type="text/javascript" src="entities/character.js"></script>	
+   
+   <script type="text/javascript" src="setting/location.js"></script>	
+   
+   <script type="text/javascript" src="ui/display.js"></script>	   
+   <script type="text/javascript" src="ui/textoutput.js"></script>	
+   <script type="text/javascript" src="ui/textinput.js"></script>	    
+
+<script>
+$(document).ready(function(){
+  $("#inventoryLabel").mouseenter(function(){
+    $('#inventoryTable').css({visibility: "visible"})
+	//expandInventoryTable()
+  });
+});
+</script>
+
+<script>
+//Move these to their own page if possible?
+$(document).ready(function(){
+  $("#inventoryLabel").mouseleave(function(){ 
+    $('#inventoryTable').css({visibility: "hidden"}) 
+	//expandStatsTable()
+  });
+});
+</script>
+</head>
+
+<body> 
+<div id="startBar">
+<td>
+<input type="button"
+                   id = "btnStart"
+                   name="btnStart"
+                   class="normal_button"
+                   value="Start"
+                   tabindex="0"
+				   onClick = "begin(this)"
+            /> 
+</td>
+</div>
+<table id="mainTable">
+	<td>
+	<div style="float: left;">
+	<label id="statsLabel" onfocus="expandStatsTable()">Stats</label>
+	<table id="statsTable">
+	<tr>
+		<td><strong>HP</td>
+		<td id="currHP">0</td>
+	</tr>
+	<tr>
+		<td><strong>MP</td>
+		<td id="currMP">0</td>
+	</tr>
+	<tr>
+		<td><strong>Attack</td>
+		<td id="currAtk">0</td>
+	</tr>
+	<tr>
+		<td><strong>Defense</td>
+		<td id="currDef">0</td>
+	</tr>
+	<tr>
+		<td><strong>Speed</td>
+		<td id="currSpd">0</td>
+	</tr>
+	</table>
+	</div>
+	</td>
+	
+	<div style="float: left;">
+	<td>
+	<textarea readonly name="programTxtBox"
+					  id="programTxtBox"
+					  class="prgmTextArea"
+					  align="left" 
+			></textarea> <!--Or use a canvas here?-->
+	<input type="text" id="programInputBox">
+	<input type="button"
+                   id = "btnEnter"
+                   name="btnEnter"
+                   class="normal_button"
+                   value="Enter"
+                   tabindex="0"
+				   onClick = "decideAction(this)"
+            />
+	</td>
+	</div>
+	
+	<div style="float: left;">
+	<td>
+	<label id="inventoryLabel" onfocus="expandInventoryTable()">Inventory</label>
+	<table id="inventoryTable">
+	<tr>
+		<td>Sword<td>
+	</tr>
+	</table>
+	</td>
+	</div>
+
+
+
+</table>
+</body>
+
+</html>
